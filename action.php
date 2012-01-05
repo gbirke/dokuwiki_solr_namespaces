@@ -35,6 +35,9 @@ class action_plugin_solrnamespacebreadcrumb extends DokuWiki_Action_Plugin {
   public function addnamespace(&$event, $params)
   {
     global $ID;
+    if(empty($event->data['html']['body'])) {
+      return;
+    }
     $id = $event->data['id'];
     $bc_links = array();
     while($ns = getNS($id)) {
