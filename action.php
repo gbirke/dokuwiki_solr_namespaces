@@ -45,10 +45,10 @@ class action_plugin_solrnamespacebreadcrumb extends DokuWiki_Action_Plugin {
       $nspage_id = "$ns:$nspage";
       if(page_exists($nspage_id)) {
         $name = p_get_first_heading($nspage_id);
-        $bc_links[] = '<a href="'.wl($nspage_id).'">'.$name.'</a>';
+        $bc_links[] = '<a class="wikilink1" href="'.wl($nspage_id).'">'.$name.'</a>';
       }
       else {
-        $bc_links[] = '<a href="'.wl('', array('idx'=>$ns)).'">'.$nspage.'</a>';
+        $bc_links[] = '<a class="wikilink1" href="'.wl('', array('idx'=>$ns)).'">'.$nspage.'</a>';
       }
       $id = $ns;
     }
